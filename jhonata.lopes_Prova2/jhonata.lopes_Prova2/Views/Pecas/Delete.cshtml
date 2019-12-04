@@ -1,0 +1,41 @@
+﻿@model jhonata.lopes_Prova2.Models.Pecas
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Você realmente deseja apagar esse item?</h3>
+<div>
+    <h4>Pecas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome_Peca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome_Peca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QTD_Pecas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QTD_Pecas)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        @Html.ActionLink("voltar", "Index")
+    </div>
+    }
+</div>

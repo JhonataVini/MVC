@@ -1,0 +1,40 @@
+﻿@model IEnumerable<jhonata.lopes_Prova2.Models.Pecas>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Pagina Inicial</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar Peças", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome_Peca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QTD_Pecas)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome_Peca)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QTD_Pecas)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

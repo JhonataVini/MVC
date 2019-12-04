@@ -1,0 +1,35 @@
+﻿@model jhonata.lopes_Prova2.Models.Pecas
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalhes da peça</h2>
+
+<div>
+    <h4>Pecas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome_Peca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome_Peca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QTD_Pecas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QTD_Pecas)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar peça", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>
